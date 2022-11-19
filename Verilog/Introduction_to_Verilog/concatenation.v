@@ -1,4 +1,7 @@
 // https://www.youtube.com/watch?v=zz2Pa0krsLU
+// https://www.chipverify.com/verilog/verilog-concatenation
+
+
 // here {cout, s} s corresponding to sum which is 4 bit from lsb, and cout will be 5th bit(msb)
 // as this a + b + cin produce result more than 4 bit as there is carry out
 
