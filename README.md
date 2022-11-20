@@ -1,6 +1,8 @@
 # VLSI  
 #### [How mosfet work](https://www.youtube.com/watch?v=Bfvyj88Hs_o)   
 #### [Flip flop](https://www.youtube.com/watch?v=ZNxnlvdiC-A)  
+#### [D, T flip flop](https://www.youtube.com/watch?v=WVoOJUlR87Y&list=PLxSt9YDBipm4gc9SS7nRNOKslHgzCqG18&index=20)  
+#### [Racing condition](https://www.youtube.com/watch?v=trPGhO7MPnw&list=PLBlnK6fEyqRjMH3mWf6kwqiTbT798eAOm&index=155)  
 -------------------------------------------------------------------------------
 #### [Verilog tutirialspot](https://www.javatpoint.com/verilog)  
 #### [Verilog youtube](https://www.youtube.com/watch?v=S26TPZm4zzM&list=PL3Soy1ohxlP1TLpcbYXYcVWItRy_XrUk8)  
