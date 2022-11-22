@@ -16,3 +16,4 @@
 -----------------------------------------------------------------------------------
 #### [Clock skew](https://www.allaboutcircuits.com/technical-articles/what-is-clock-skew-understanding-clock-skew-and-clock-distribution-networks/) 
 #### [Setup & hold time and propagation delay](https://www.youtube.com/watch?v=3t8ndX2hqHA)
+#### fan-in, fan-out[quora](https://www.quora.com/What-is-fan-in-and-fan-out-in-logic-circuits)[intel](https://www.intel.com/content/www/us/en/programmable/quartushelp/17.0/reference/glossary/def_fan.htm#:~:text=Fan%2Dout%20refers%20to%20the,equations%20of%20a%20logic%20cell.)  
