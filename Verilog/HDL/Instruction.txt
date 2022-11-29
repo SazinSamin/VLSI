@@ -1,0 +1,152 @@
+Synthesis:
+
+mkdir simulation synthesis rtl lib constraints
+cd simulation
+cp cntr8bit.v ../rtl/
+cd ../lib
+cp ~sahmed/eee442/lab3/lib/*.lib . (don’t forget the dot(.) at the end)
+cd ../synthesis
+vi rc_script.tcl
+
+
+
+rc_script.tcl
+
+set_attr   lib_search_path   ../lib/
+set_attr   hdl_search_path   ../rtl/
+set_attr   library   slow.lib
+read_hdl   add_sub.v
+elaborate
+read_sdc ../constraints/adder_sub.g
+synthesize   -to_mapped   -effort   medium
+write_hdl   >   add_sub_netlist.v
+write_sdc   >   add_sub.sdc
+
+
+cd ../constraints
+vi cntr8bit.g
+
+
+
+
+Adder subtractor constraints:
+
+create_clock   -name  clk  -period  1  -waveform {0 0.5}  [get_ports  "clk"]
+set_clock_transition   -rise 0.08  [get_clocks  "clk"]
+set_clock_transition   -fall 0.08  [get_clocks  "clk"]
+set_clock_uncertainty   0.08  [get_ports  "clk"]
+set_input_delay   -max  0.05  [get_ports  "a"]   -clock  [get_clocks  "clk"]
+set_input_delay   -max  0.05  [get_ports  "b"]   -clock  [get_clocks  "clk"]
+set_input_delay   -max  0.05  [get_ports  "cin"]   -clock  [get_clocks  "clk"]
+set_input_delay   -max  0.05  [get_ports  "cnt"]   -clock  [get_clocks  "clk"]
+set_input_delay   -max  0.05 [get_ports  "rst"]   -clock  [get_clocks  "clk"]
+set_output_delay   -max  0.05  [get_ports  "s"]   -clock  [get_clocks  "clk"]
+set_output_delay   -max  0.05  [get_ports  "cout"]   -clock  [get_clocks  "clk"]
+
+cd ../synthesis
+csh
+genus -legacy_ui -f rc_script.tcl
+Gui_show
+
+
+P&R:
+mkdir lib constraints lef physical_design netlist
+cp ../lab3/synthesis/cntr8bit_netlist.v netlist/
+cp ../lab3/synthesis/cntr8bit.sdc constraints /
+cp ../lab3/lib/*.lib lib/
+cp ~sahmed/eee442/lab4/lef/all.lef lef/
+cd physical_design
+innovus
+
+
+
+
+DESIGN IMPORT
+
+Click on File Import Design menu option. This will open the Design Import window.
+Under Netlist: option choose Verilog. Click on the browse button to select the gate level netlist from the netlist/ sub-directory
+Under Top Cell: option select Auto Assign:
+Under Technology/Physical Libraries: option select LEF Files: Click on the browse button and select all.lef file from lef/ sub-directory
+Under Power option use VDD as power Nets: VSS as Ground Nets:
+Under analysis Configuration option click on the Create Analysis Configuration button.
+An MMMC Browser window will open.
+Double click on Library Sets. Add Library Set window will open. Name: it as max_timing and click on ‘Add…’ button under ‘Timing Library Files’
+Set max_timing to ‘slow.lib’ and min_timing to ‘fast.lib’ under the lib/ sub-directory.
+Double click on Delay Corners. Add Delay Corner window will appear. Name: it as min_delay. In the ‘Library Set’ option under ‘Attributes’, scroll to min_timing and click ‘OK’
+Similarly set max_delay to max_timing.
+Double click on Constraints Modes. Add Constraint Mode window will open. Name: it as counter_constraints and click on ‘Add…’ button under ‘CDS Constraint Files’
+Set counter_constraints to ‘cntr8bit.sdc’ under constraints/ sub-directory.
+Double click on Analysis Views. Add Analysis View window will open. Name: it as worst_case and select max_delay for Delay Corner and click ‘OK’
+Similarly set best_case to min_delay.
+Double click on Setup Analysis Views. Add Setup Analysis Views window will open. Set the Analysis View to worst_case. Click ‘OK’
+Double click on Hold Analysis Views. Add Hold Analysis Views window will open. Set the Analysis View to best_case. Click ‘OK’
+MMMC Browser will look as below: Click on ‘Save & Close’.
+Save MMMC View Definition File window will open. Provide the File name: as Default.view and click on ‘Save’
+Click ‘OK’ on the Design Import window. This will load the design into Innovus
+
+FLOOR PLANNING
+
+Click Floorplan Specify Floorplan menu option. This will open the ‘Specify Floorplan’ window.
+Select aspect ratio as per requirement. Give some dimension in ‘Core to Left’, ‘Core to Right’, ‘Core to Top’ and ‘Core to Bottom’. (Remember the values are in µm) to create space for Power Rings. After defining code are, click ‘OK’
+
+POWER PLANNING
+
+Click on Power Power Planning Add Rings menu option. This will open ‘Add Rings’ window
+Type/Select VDD and VSS nets under the Net(s) option.
+Select top/bottom layers as Metal5, left/right layers as Metal6. Make sure the metal layer names match with that of all.lef file in lef/ sub-directory. Set the width/space as per requirement (unit is in µm) and taking the space between core boundary and I/O pad consideration. Select the option for offset as ‘Center in channel’ and click ‘OK’
+Power ring will be created between core boundary and IO/Die boundary
+
+Click Power Power Planning Add Stripe menu option. This will open ‘Add Stripes’ window
+Type/Select VDD and VSS nets under the Net(s) option.
+Select Layer: as Metal6 and Direction: as Vertical. Make sure the metal layer names and direction match with that of all.lef. Set width/spacing as per requirement (unit is in µm). Choose one of the Set Pattern, use Core ring as the Stripe Boundary, set the First/Last Stripe staring from left. Click ‘OK’.
+Vertical power stripe will be created.
+Perform steps 34, 35 and 36 to create horizontal stripes if needed.
+
+Click Route Special Route menu option. This will open ‘SRoute’ window
+Type/Select VDD and VSS nets under the Net(s) option.
+Choose any of the options IFollow Pins for standard cells) that you want to ruote under SRoute
+Choose the Top/Bottom Layer and other option as needed. Click ‘OK’
+This will create the standard cell rails and others if chosen
+
+PLACEMENT
+
+Click Place Place Standard Cells menu option. This will open ‘Place’ window
+Select ‘Run Full Placement’, choose ‘Include Pre-Place Optimization’ under Optimization Option. Click ‘OK’
+Click on the Physical View to see the standard cells.
+
+PRE-CTS TIMING
+
+Click Timing Report Timing menu option. This will open ‘Timing Analysis’ window
+Select ‘Pre-CTS’ under Design Stage and ‘Setup’ under Analysis Type. Click ‘OK’
+This will display the timing information on the Innovus terminal. Carefully check the Worst Negative Slack (WNS) and Total Negative Slack (TNS).
+If there are WNS/TNS, click on Optimize Optimize Design menu option. This will open ‘Optimization’ window
+Select ‘Pre-CTS’ under Design Stage and ‘Setup’, ‘Max Cap’ and ‘Max Tran’ under Optimization Type. Click ‘Ok’. This will optimize the design. Check timing again. Repeat until timing is met.
+
+CLOCK TREE SYNTHESIS
+
+Click Clock Synthesize Clock Tree…’ menu option. This will open ‘Synthesize Clock Spec’ window
+Click on ‘Gen Spec…’ This will open ‘Generate Clock Spec’ window
+From Cells List select all cells starting with ‘CLK’ and click on ‘Add’ button to add them to the Selected Cells. Give a name for the Output Specification File: and click ‘OK’.
+Give a name for the Result Directory: in the ‘Synthesis Clock Tree’ window. Click ‘OK’
+
+ROUTING
+
+…
+…
+
+VERIFICATION
+
+Geometry
+Connectivity
+…
+
+GDS Out
+
+…
+
+
+
+
+
+
+
