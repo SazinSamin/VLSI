@@ -1,0 +1,15 @@
+error# 2.248    line   16    file H:\Book\EEE\VLSI\silos\fibo\fibo.v
+  n=n+1;
+   ^ variable 'n' was not declared
+error# 2.248    line   16    file H:\Book\EEE\VLSI\silos\fibo\fibo.v
+  n=n+1;
+     ^ variable 'n' was not declared
+error# 2.248    line   25    file H:\Book\EEE\VLSI\silos\fibo\fibo.v
+   n<=0;
+     ^ variable 'n' was not declared
+error# 2.188
+sim to 0
+        ^ errors are too severe to simulate
+error# 2.188
+sim 
+    ^ errors are too severe to simulate

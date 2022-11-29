@@ -1,0 +1,9 @@
+error# 3.229    line   15    file H:\Book\EEE\VLSI\silos\compa\com.v
+    if(~rst) 
+     ^ expecting "initial", "always", "assign", "endmodule" ..., not keyword "if"
+error# 2.188
+sim to 0
+        ^ errors are too severe to simulate
+error# 2.188
+sim 
+    ^ errors are too severe to simulate

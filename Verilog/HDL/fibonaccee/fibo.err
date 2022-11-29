@@ -1,0 +1,60 @@
+error# 3.229    line   15    file H:\Book\EEE\VLSI\silos\fibonaccee\fibo_tb.v
+always #5 C=~C;
+     ^ expecting "end", or statement, not keyword "always"
+error# 3.229    line   15    file H:\Book\EEE\VLSI\silos\fibonaccee\fibo_tb.v
+always #5 C=~C;
+     ^ expecting "end", or statement, not keyword "always"
+error# 3.229    line   15    file H:\Book\EEE\VLSI\silos\fibonaccee\fibo_tb.v
+always #5 C=~C;
+       ^ expecting "end", or statement
+error# 3.229    line   15    file H:\Book\EEE\VLSI\silos\fibonaccee\fibo_tb.v
+always #5 C=~C;
+        ^ expecting "end", or statement, not integer constant
+error# 3.229    line   15    file H:\Book\EEE\VLSI\silos\fibonaccee\fibo_tb.v
+always #5 C=~C;
+          ^ expecting "end", or statement
+error# 3.229    line   15    file H:\Book\EEE\VLSI\silos\fibonaccee\fibo_tb.v
+always #5 C=~C;
+           ^ expecting "end", or statement
+error# 3.229    line   15    file H:\Book\EEE\VLSI\silos\fibonaccee\fibo_tb.v
+always #5 C=~C;
+            ^ expecting "end", or statement
+error# 3.229    line   15    file H:\Book\EEE\VLSI\silos\fibonaccee\fibo_tb.v
+always #5 C=~C;
+             ^ expecting "end", or statement
+error# 3.229    line   16    file H:\Book\EEE\VLSI\silos\fibonaccee\fibo_tb.v
+always #10 SI=~SI;
+     ^ expecting "end", or statement, not keyword "always"
+error# 3.229    line   16    file H:\Book\EEE\VLSI\silos\fibonaccee\fibo_tb.v
+always #10 SI=~SI;
+     ^ expecting "end", or statement, not keyword "always"
+error# 3.229    line   16    file H:\Book\EEE\VLSI\silos\fibonaccee\fibo_tb.v
+always #10 SI=~SI;
+       ^ expecting "end", or statement
+error# 3.229    line   16    file H:\Book\EEE\VLSI\silos\fibonaccee\fibo_tb.v
+always #10 SI=~SI;
+         ^ expecting "end", or statement, not integer constant
+error# 3.229    line   16    file H:\Book\EEE\VLSI\silos\fibonaccee\fibo_tb.v
+always #10 SI=~SI;
+            ^ expecting "end", or statement
+error# 3.229    line   16    file H:\Book\EEE\VLSI\silos\fibonaccee\fibo_tb.v
+always #10 SI=~SI;
+             ^ expecting "end", or statement
+error# 3.229    line   16    file H:\Book\EEE\VLSI\silos\fibonaccee\fibo_tb.v
+always #10 SI=~SI;
+              ^ expecting "end", or statement
+error# 3.229    line   16    file H:\Book\EEE\VLSI\silos\fibonaccee\fibo_tb.v
+always #10 SI=~SI;
+                ^ expecting "end", or statement
+error# 3.229    line   18    file H:\Book\EEE\VLSI\silos\fibonaccee\fibo_tb.v
+endmodule
+        ^ expecting "end", or statement, not keyword "endmodule"
+error# 3.229    line   18    file H:\Book\EEE\VLSI\silos\fibonaccee\fibo_tb.v
+endmodule
+        ^ expecting "end", or statement, not keyword "endmodule"
+error# 2.188
+sim to 0
+        ^ errors are too severe to simulate
+error# 2.188
+sim 
+    ^ errors are too severe to simulate

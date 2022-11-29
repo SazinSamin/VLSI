@@ -1,0 +1,46 @@
+sim to 0
+sim 
+scope "shift_tb "
+vprobe tmp[7:0]
+scope "shift_tb "
+vprobe ( 1 )
+scope "shift_tb "
+vprobe ( 1 )
+scope "shift_tb "
+vprobe ( 1 )
+scope "shift_tb "
+vprobe ( 1 )
+scope "shift_tb "
+vprobe ( 1 )
+scope "shift_tb "
+vprobe ( 1 )
+scope "shift_tb "
+vprobe ( 1 )
+scope "shift_tb "
+vprobe ( 1 )
+scope "shift_tb "
+vprobe ( 1 )
+scope "shift_tb "
+vprobe ( 1 )
+scope "shift_tb "
+vprobe ( 1 )
+scope "shift_tb "
+vprobe ( 1 )
+scope "shift_tb "
+vprobe ( 1 )
+scope "shift_tb "
+vprobe ( 1 )
+scope "shift_tb "
+vprobe ( 1 )
+scope "shift_tb "
+vprobe ( 1 )
+scope "shift_tb "
+vprobe ( 1 )
+scope "shift_tb "
+vprobe ( 1 )
+scope "shift_tb "
+vprobe ( 1 )
+scope "shift_tb "
+vprobe ( 1 )
+scope "shift_tb "
+vprobe ( 1 )

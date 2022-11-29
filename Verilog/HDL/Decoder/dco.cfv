@@ -1,0 +1,19 @@
+// Simucad Generated Commands Start Here
+
+// Simucad define
++define+sse
+
+// Project Settings
++assignment_tracking
++typdelays
+-"!file .sav=\"dco\""
+-"!control .sav=3"
+-"!control .enablecache"
+-"!control .savcell=0"
+-"!control .disk=1000M"
+
+// Input Files
+"../compa/com.v"
+"../compa/com_tb.v"
+
+// Simucad Generated Commands End Here

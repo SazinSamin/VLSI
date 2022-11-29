@@ -1,0 +1,46 @@
+sim to 0
+sim 
+scope "com_tb.ut "
+vprobe ( 0 )
+scope "com_tb.ut "
+vprobe ( 0 )
+scope "com_tb.ut "
+vprobe ( 0 )
+scope "com_tb.ut "
+vprobe ( 0 )
+scope "com_tb.ut "
+vprobe ( 0 )
+scope "com_tb.ut "
+vprobe ( 0 )
+scope "com_tb.ut "
+vprobe ( 0 )
+scope "com_tb.ut "
+vprobe ( 0 )
+scope "com_tb.ut "
+vprobe ( 0 )
+scope "com_tb.ut "
+vprobe ( 0 )
+scope "com_tb.ut "
+vprobe ( 0 )
+scope "com_tb.ut "
+vprobe ( 1 )
+scope "com_tb.ut "
+vprobe ( 1 )
+scope "com_tb.ut "
+vprobe ( 1 )
+scope "com_tb.ut "
+vprobe ( 1 )
+scope "com_tb.ut "
+vprobe ( 0 )
+scope "com_tb.ut "
+vprobe ( 0 )
+scope "com_tb.ut "
+vprobe ( 0 )
+scope "com_tb.ut "
+vprobe ( 0 )
+scope "com_tb.ut "
+vprobe ( 0 )
+scope "com_tb.ut "
+vprobe ( 0 )
+scope "com_tb.ut "
+vprobe ( 0 )

@@ -1,0 +1,12 @@
+sim to 0
+sim 
+scope "fibo_tb "
+vprobe fib[7:0]
+scope "fibo_tb.g "
+vprobe ( 1 )
+scope "fibo_tb.g "
+vprobe ( 1 )
+scope "fibo_tb.g "
+vprobe ( 1 )
+scope "fibo_tb.g "
+vprobe ( 1 )
