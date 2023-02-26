@@ -1,0 +1,65 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x556055d79dc0 .scope module, "jcounter" "jcounter" 2 1;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 4 "out";
+    .port_info 1 /INPUT 1 "rst";
+    .port_info 2 /INPUT 1 "clk";
+P_0x556055d79f50 .param/l "N" 0 2 2, +C4<00000000000000000000000000000100>;
+o0x7f7a94c50018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556055d7bba0_0 .net "clk", 0 0, o0x7f7a94c50018;  0 drivers
+v0x556055dc3570_0 .var/i "i", 31 0;
+v0x556055dc3650_0 .var "out", 3 0;
+o0x7f7a94c500a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x556055dc3740_0 .net "rst", 0 0, o0x7f7a94c500a8;  0 drivers
+E_0x556055db2c70 .event posedge, v0x556055d7bba0_0;
+    .scope S_0x556055d79dc0;
+T_0 ;
+    %wait E_0x556055db2c70;
+    %load/vec4 v0x556055dc3740_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 1, 0, 4;
+    %assign/vec4 v0x556055dc3650_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0x556055dc3650_0;
+    %parti/s 1, 0, 2;
+    %inv;
+    %ix/load 4, 3, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4 v0x556055dc3650_0, 4, 1;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x556055dc3570_0, 0, 32;
+T_0.2 ;
+    %load/vec4 v0x556055dc3570_0;
+    %cmpi/s 3, 0, 32;
+    %jmp/0xz T_0.3, 5;
+    %load/vec4 v0x556055dc3650_0;
+    %load/vec4 v0x556055dc3570_0;
+    %addi 1, 0, 32;
+    %part/s 1;
+    %ix/load 5, 0, 0;
+    %ix/getv/s 4, v0x556055dc3570_0;
+    %assign/vec4/off/d v0x556055dc3650_0, 4, 5;
+    %load/vec4 v0x556055dc3570_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0x556055dc3570_0, 0, 32;
+    %jmp T_0.2;
+T_0.3 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "jcounter.v";

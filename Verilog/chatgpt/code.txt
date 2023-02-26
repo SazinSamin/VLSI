@@ -1,0 +1,77 @@
+module alu_tb();
+
+logic [15:0] A, B, Y;
+logic [3:0] OP;
+logic clk, reset;
+
+alu uut(.A(A), .B(B), .OP(OP), .Y(Y));
+
+initial begin
+    clk = 0;
+    forever #5 clk = ~clk;
+end
+
+initial begin
+    reset = 1;
+    #10 reset = 0;
+    #100 $finish;
+end
+
+task test_op(input logic [15:0] A, input logic [15:0] B, input logic [3:0] OP, output logic [15:0] Y);
+    #5;
+    case (OP)
+        4'b0000: Y = A + B;
+        4'b0001: Y = A - B;
+        4'b0010: Y = A & B;
+        4'b0011: Y = A | B;
+        4'b0100: Y = A ^ B;
+        4'b0101: Y = A << B[3:0];
+        4'b0110: Y = A >> B[3:0];
+        default: $fatal("Invalid operation code");
+    endcase
+endtask
+
+initial begin
+    // Test addition
+    A = 16'hABCD;
+    B = 16'h1234;
+    OP = 4'b0000;
+    @(posedge clk);
+    test_op(A, B, OP, Y);
+    $display("A + B = %h", Y);
+    assert(Y == 16'hBEE1) else $error("Test failed: addition");
+
+    // Test subtraction
+    A = 16'hABCD;
+    B = 16'h1234;
+    OP = 4'b0001;
+    @(posedge clk);
+    test_op(A, B, OP, Y);
+    $display("A - B = %h", Y);
+    assert(Y == 16'h9969) else $error("Test failed: subtraction");
+
+    // Test bitwise AND
+    A = 16'hABCD;
+    B = 16'h1234;
+    OP = 4'b0010;
+    @(posedge clk);
+    test_op(A, B, OP, Y);
+    $display("A & B = %h", Y);
+    assert(Y == 16'h0234) else $error("Test failed: bitwise AND");
+
+    // Test bitwise OR
+    A = 16'hABCD;
+    B = 16'h1234;
+    OP = 4'b0011;
+    @(posedge clk);
+    test_op(A, B, OP, Y);
+    $display("A | B = %h", Y);
+    assert(Y == 16'hABDF) else $error("Test failed: bitwise OR");
+
+    // Test bitwise XOR
+    A = 16'hABCD;
+    B = 16'h1234;
+    OP = 4'b0100;
+    @(posedge clk);
+    test_op(A, B, OP, Y);
+    $display("A ^ B = %h
