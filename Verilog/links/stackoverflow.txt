@@ -1,0 +1,2 @@
+https://stackoverflow.com/questions/5927615/what-is-the-difference-between-and-in-verilog
+https://stackoverflow.com/questions/44694957/the-difference-between-logical-shift-right-arithmetic-shift-right-and-rotate-r

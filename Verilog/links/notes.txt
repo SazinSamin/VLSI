@@ -1,0 +1,21 @@
+assign work for wire
+reg work inside initial and always
+procedural block support only reg data type
+
+use blocking assignment when modeling combinational logic with an always block.
+
+
+
+continious assignment used with wire(net) and have "assign" keyword in front of it, used in combo logic, any changes to right hand
+this line will execute
+
+procedural assignment used with reg, used inside inital and always, used in sequential logic
+
+
+race condition
+http://testbench.in/TB_16_RACE_CONDITION.html
+
+
+
+different kinds of modeling
+https://technobyte.org/verilog-multiplexer-2x1/

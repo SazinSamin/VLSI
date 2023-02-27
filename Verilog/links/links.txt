@@ -1,0 +1,39 @@
+https://www.indeed.com/career-advice/interviewing/rtl-design-interview-questions
+
+
+https://www.geeksforgeeks.org/difference-between-verilog-and-systemverilog/
+https://byjus.com/gate/difference-between-combinational-and-sequential-circuit/#:~:text=The%20combinational%20circuit%20is%20time,present%20inputs%20for%20generating%20output.
+
+
+Should know:
+K-map
+async sync(like D-filp flop)
+cmos
+Finite state machine
+X - Fan out - fan in
+X -Rc delay estimation
+State table to state diagram or state diagram to state table???? then from there verilog???
+or Sequence detection has given and we have to design
+stack as fault?
+
+
+
+Demultiplexer
+Encoder
+Decoder
+JK Flip flop
+Shift register(SISO, PIPO)y
+Priority encoder
+Bi-directional shift registor
+
+substractor
+multiplier
+
+
+Memorise:
+ASIC design flow
+Verification stages
+Logic gates
+A simplified flowchart for HDL‐based modeling, verification, and synthesis(from book)
+
+
