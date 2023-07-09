@@ -1,4 +1,4 @@
-odule decode32 (out,a,clk,rst);
+module decode32 (out,a,clk,rst);
 	input[4:0]a;
 	input clk,rst;
 	output reg[31:0]out;
