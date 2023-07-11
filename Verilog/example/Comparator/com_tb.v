@@ -2,7 +2,7 @@ module tb_com;
 	reg a, b, clk, rst;
 	wire gt, ls, eq;
 	
-	comarator inst(
+	comparator inst(
 		.a(a),
 		.b(b),
 		.clk(clk),
