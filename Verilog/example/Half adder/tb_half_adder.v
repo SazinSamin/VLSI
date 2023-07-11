@@ -7,6 +7,7 @@ module tb_half_adder;
 	half_adder h0 (
 		.a(a),
 		.b(b),
+		.clk(clk),
 		.sum(sum),
 		.cout(cout)
 	);
@@ -15,11 +16,11 @@ module tb_half_adder;
 		$dumpfile("tb_half_adder.vcd");
 		$dumpvars(0, tb_half_adder); // Add h0 to the waveform dumping
 		
-		a = 0; b = 0;
+		a = 0; b = 0; clk=0;
 		#500 $finish;
 	end
 	
-
+	always #1 clk = ~clk;
 	always #5 a = a+1;
 	always #10 b = b+1;
 	
