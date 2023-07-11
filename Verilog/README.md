@@ -7,4 +7,7 @@ Comile the verilog:
 Generate wave:  
 -	    vvp mux21_wave   
 see the wave in gtk_wave:  
--   	gtkwave test_mux21.vcd  
+-   	gtkwave test_mux21.vcd
+
+***We can't put value in "wire" datatype***
+
