@@ -15,13 +15,13 @@ module tb_com;
 	initial begin
 	 	$dumpfile("tb_com.vcd");  
   		$dumpvars(0, tb_com);  
-		rst <= 1; a <= 0; b <= 0; clk <= 0;
-		#5 a <=0;
-		#5 b <=0;
-		#10 a <=1;
-		#10 b <=0;
-		#20 a <=0;
-		#20 b <=1;
+		rst = 1; a = 0; b = 0; clk = 0;
+		#5 a =0;
+		#5 b =0;
+		#10 a =1;
+		#10 b =0;
+		#20 a =0;
+		#20 b =1;
 		#30 $finish;
 	end
 	
