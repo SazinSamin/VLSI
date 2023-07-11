@@ -1,4 +1,4 @@
-module comarator(a, b, clk, rst, gt, ls, eq);
+module comparator(a, b, clk, rst, gt, ls, eq);
 	input a, b, clk, rst;
 	output reg gt, ls, eq;
 	
