@@ -1,9 +1,10 @@
-module half_adder(a, b, clk, sum, cout);
-    input a, b, clk;
-    output reg sum, cout;
-    
-    always @ (posedge clk) 
-        begin
-            {cout, sum} =  a + b;
-        end
+module half_adder( input [2:0] a, 
+				input [2:0] b,
+				output reg [4:0] sum,
+				output reg cout
+				);
+
+	always @ (*)
+		{cout, sum} =  a + b;
+	
 endmodule
