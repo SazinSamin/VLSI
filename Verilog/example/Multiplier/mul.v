@@ -1,14 +1,20 @@
-module mult32bit(clk,rst,a,b,cout);
-input [31:0]a,b;
-inputclk,rst;
-outputreg [63:0]cout;
-reg [31:0]ai,bi;
-always @(posedgeclk)begin
-ai<=a;
-	bi<=b;
-if (~rst)
-	cout<= 0;
-else
-	cout<=ai*bi;
-end
+module mulNbit(a, b, clk, cin, rst, sum, cout);
+	parameter N = 32;
+	input [N-1:0] a, b;
+	input cin, clk, rst;
+	output reg [N-1:0] sum;
+	output reg cout;
+	
+	always @ (posedge clk)
+	begin
+		if(~rst)
+			begin
+				sum <= 0;
+				cout <= 0;
+			end
+		else 
+			begin
+				{cout, sum} = a * b;
+			end
+	end
 endmodule
