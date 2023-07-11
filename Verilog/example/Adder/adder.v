@@ -1,22 +1,20 @@
-module fadder32bit(sum,cout,a,b,cin,clk,rst);
-	input [31:0] a,b;
-	input cin,clk,rst;
-	output reg[31:0] sum;
+module faNbit(a, b, clk, cin, rst, sum, cout);
+	parameter N = 32;
+	input [N-1:0] a, b;
+	input cin, clk, rst;
+	output reg [N-1:0] sum;
 	output reg cout;
-	reg [31:0] ai,bi;
-	reg ci; 
 	
-	always @(posedge clk) 
-		begin
-			ai<=a;   bi<=b;
-			ci<=cin;
-			if(~rst)
-				begin
-					sum<=0;
-					cout<=0;
-				end
-			else
-				{cout,sum}<=ai+bi+ci;
-		end
-		
+	always @ (posedge clk)
+	begin
+		if(~rst)
+			begin
+				sum <= 0;
+				cout <= 0;
+			end
+		else 
+			begin
+				{cout, sum} = a + b + cin;
+			end
+	end
 endmodule
