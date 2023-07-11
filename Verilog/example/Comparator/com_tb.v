@@ -1,40 +1,29 @@
-module com_tb;
-	reg clk,rst;
-	reg [31:0]a,b;
-	wire Gt, Lt, Eq;
-
-	com ut	(
-		.clk(clk),
-		.Gt(Gt),
-		.Lt(Lt),
-		.Eq(Eq),
+module tb_com;
+	reg a, b, clk, rst;
+	wire gt, ls, eq;
+	
+	comarator inst(
 		.a(a),
 		.b(b),
-		.rst(rst)
-		);
-		
+		.clk(clk),
+		.rst(rst),
+		.gt(gt),
+		.ls(ls),
+		.eq(eq)
+	);
 	
-
-
-	initial 
-		begin
-		clk=0;
-		 a = 0;
-
-  		 b = 0;
-		rst=0;
-		#2 rst=1;
-		#4 rst=0;
-
-		
-
-		
-		
-		#4048 $finish;
-		end
- 		
-	always #2 clk=~clk;
-	always #4 a=~a;
-	always #8 b=~b;
-
+	initial begin
+	 	$dumpfile("tb_com.vcd");  
+  		$dumpvars(0, tb_com);  
+		rst <= 1; a <= 0; b <= 0; clk <= 0;
+		#5 a <=0;
+		#5 b <=0;
+		#10 a <=1;
+		#10 b <=0;
+		#20 a <=0;
+		#20 b <=1;
+		#30 $finish;
+	end
+	
+	always #5 clk = ~clk;
 endmodule
