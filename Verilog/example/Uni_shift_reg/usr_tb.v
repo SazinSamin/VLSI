@@ -1,7 +1,7 @@
 module usr32bit_tb;
 reg [31:0]a;
 reg [1:0]shift_lt_rt;
-regload,rst,clk;
+reg load,rst,clk;
 wire [31:0] cout;
 usr32bit inst1(cout,clk,rst,load,shift_lt_rt,a);
 initial begin
