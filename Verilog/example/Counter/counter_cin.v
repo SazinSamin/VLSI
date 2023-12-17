@@ -1,11 +1,11 @@
 adder_8bit_rtl(clk,rst,a,b,cin,s,cout);
 input [7:0]a,b;
-inputcin,clk,rst;
-outputregcout;
-outputreg [7:0]s;
+input cin,clk,rst;
+output regcout;
+output reg [7:0]s;
 reg [7:0]A,B;
 reg CI;
-always @(posedgeclk) begin
+always @(posedge clk) begin
 A<=a;
 B<=b;
 CI<=cin;
