@@ -1,7 +1,7 @@
 module alu32bit_tb;
 	reg [31:0]a,b;
 	reg [1:0]sel;
-	regrst,clk;
+	reg rst,clk;
 	wire [31:0]cout;
 	alu32bit inst1(cout,a,b,sel,clk,rst);
 	
