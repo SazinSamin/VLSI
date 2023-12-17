@@ -4,7 +4,7 @@ module alu32bit(cout,a,b,sel,clk,rst);
 	input clk,rst;
 	output reg[31:0]cout;
 	
-	always @(posedgeclk) begin
+	always @(posedge clk) begin
 		if(~rst)
 			cout<=0;
 		else begin
