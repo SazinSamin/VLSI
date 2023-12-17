@@ -1,7 +1,7 @@
 module adder_8bit_rtl_tb;
 reg [7:0]a,b;
-regcin,clk,rst;
-wirecout;
+reg cin,clk,rst;
+wire cout;
 wire [7:0]s;
 adder_8bit_rtl stage1(clk,rst,a,b,cin,s,cout);
 initial begin
